@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+        title Animal Dashboard
+    body
+        h1.text-center.mb-5 Welcome to Animal Dashboard!
+        div.container.text-center
+            h5 Below are some of our coolest animals!
+            each animal in animals
+                li= animal.name + ' the ' + animal.color + ' ' + animal.typeOf
+                a(href="/animal/edit/" + animal._id)= 'Edit ' + animal.name
+                br
+                a(href="/animal/" + animal._id)= 'View ' + animal.name
+                form(action="/animals/destroy/" + animal._id method="post")
+                    input(type="submit" value=`Delete ${animal.name}`).btn.btn-link
+            br
+            hr
+            div
+                p Or, Create One!
+                a(href="/animal/new") Create

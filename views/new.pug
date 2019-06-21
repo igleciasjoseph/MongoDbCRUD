@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+        title New Animal
+    body.container.text-center
+        h1 Create one below!
+        form(action="/animals" method="post").mb-5
+            div.form-group
+                label Name:
+                div
+                    input(type="text" name="name")
+            div.form-group
+                label Type Of Animal:
+                div
+                    input(type="text" name="typeOf")
+            div.form-group
+                label Color:
+                div
+                    select(name="color")
+                        option Red
+                        option Blue
+                        option Orange
+                        option Green
+                        option Black
+                        option Gray
+                        option White
+            div.form-group
+                label Age:
+                div
+                    input(type="number" name="age")
+            input(type="submit" value="Submit")
+        a(href="/").btn.btn-primary Back Home
